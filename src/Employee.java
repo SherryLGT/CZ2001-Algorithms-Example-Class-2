@@ -7,6 +7,7 @@
  */
 
 public class Employee {
+	
 	private String nric;
 	private String name;
 	private String gender;
@@ -18,7 +19,11 @@ public class Employee {
 		gender = "";
 		phone = "";
 	}
-
+    
+    public int GetNricDigits() {
+    	return Integer.valueOf(nric.substring(1, 8));
+    }
+	
 	public String getNric() {
 		return nric;
 	}

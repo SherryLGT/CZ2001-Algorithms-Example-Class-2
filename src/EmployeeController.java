@@ -26,7 +26,9 @@ public class EmployeeController {
 //	private static final char[] STATUS = {'S', 'T', 'F', 'G'};
     private static final char[] CHECKSUM = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'Z', 'J'};
     
+    // Generate one Employee information
     public Employee GenerateEmployee(char prefix) {
+    	
     	Employee e = new Employee();
     	Random rnd = new Random();
     	
@@ -51,7 +53,20 @@ public class EmployeeController {
     	return e;
     }
     
+    // Generate a list of Employees
+    public Employee[] GenerateEmployee(char prefix, int count) {
+    	
+    	Employee[] list = new Employee[count];
+    	
+    	for(int i = 0; i < count; i++) {
+    		list[i] = GenerateEmployee(prefix);
+    	}
+    	
+		return list;
+    }
+    
     private String GenerateNRIC() {
+    	
     	int sum = 0;
     	String nric = "";
     	Random rnd = new Random();
@@ -66,6 +81,7 @@ public class EmployeeController {
     }
     
     private void LoadNames() {
+    	
     	BufferedReader br = null;
     	
     	try {
