@@ -1,4 +1,3 @@
-import java.util.LinkedList;
 import java.util.Scanner;
 
 /**
@@ -154,7 +153,7 @@ public class HashingSearch {
 		maxSearchComparisons = 0;
 		minSearchComparisons = -1;
 		
-		System.out.println("\nSearching: 10 unsuccessful cases.");
+		System.out.println("\nSearching: " + size + " unsuccessful cases.");
 		
 		for(Employee e : invalids) {
 			start = System.nanoTime();
@@ -213,7 +212,8 @@ public class HashingSearch {
                 System.out.println("\nLinear Probing Searching Successful, CPU Time: " + (end - start) + "ns, No. of Comparisons: " + result + ".");
                 System.out.println("NRIC: " + e.getNric());
                 System.out.println("Name: " + e.getName());
-                System.out.println("Gender: " + e.getPhone());
+                System.out.println("Gender: " + e.getGender()); 
+        		System.out.println("Phone: " + e.getPhone());
 			}
 
 			
@@ -227,7 +227,8 @@ public class HashingSearch {
                 System.out.println("\nDouble Hashing Searching Successful, CPU Time: " + (end - start) + "ns, No. of Comparisons: " + result + ".");
                 System.out.println("NRIC: " + e.getNric());
                 System.out.println("Name: " + e.getName());
-                System.out.println("Gender: " + e.getPhone());
+                System.out.println("Gender: " + e.getGender()); 
+        		System.out.println("Phone: " + e.getPhone());
 			}
 		}
 	}
