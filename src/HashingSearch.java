@@ -18,7 +18,7 @@ public class HashingSearch {
 		Employee[] linearHashTable = new Employee[TABLE_SIZE];
 		Employee[] doubleHashTable = new Employee[TABLE_SIZE];
 		
-		System.out.print("Enter size of data set: ");
+		System.out.print("Enter size of dataset: ");
 		Scanner sc = new Scanner(System.in);
 		int size = Integer.parseInt(sc.nextLine());
 
@@ -100,6 +100,7 @@ public class HashingSearch {
 			end = System.nanoTime();
 			totalTime += (end - start);
 			totalSearch++;
+			totalSearchComparisons += result;
 			
 			if(maxSearchComparisons < result) {
 				maxSearchComparisons = result;
@@ -207,7 +208,7 @@ public class HashingSearch {
 			end = System.nanoTime();
 			
 			if(result <= 0)
-				System.out.println("\nLinear Probing Searching Unsuccessful, CPU Time: " + (end - start) + "ns, No. of Comparisons: " + Math.abs(result) + ".");
+				System.out.println("Linear Probing Searching Unsuccessful, CPU Time: " + (end - start) + "ns, No. of Comparisons: " + Math.abs(result) + ".");
 			else {
                 System.out.println("\nLinear Probing Searching Successful, CPU Time: " + (end - start) + "ns, No. of Comparisons: " + result + ".");
                 System.out.println("NRIC: " + e.getNric());
@@ -222,7 +223,7 @@ public class HashingSearch {
 			end = System.nanoTime();
 			
 			if(result <= 0)
-				System.out.println("\nDouble Hashing Searching Unsuccessful, CPU Time: " + (end - start) + "ns, No. of Comparisons: " + Math.abs(result) + ".");
+				System.out.println("Double Hashing Searching Unsuccessful, CPU Time: " + (end - start) + "ns, No. of Comparisons: " + Math.abs(result) + ".");
 			else {
                 System.out.println("\nDouble Hashing Searching Successful, CPU Time: " + (end - start) + "ns, No. of Comparisons: " + result + ".");
                 System.out.println("NRIC: " + e.getNric());
