@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class HashingSearch {
 	
-	private final static int TABLE_SIZE = 1000;
+	private final static int TABLE_SIZE = 997;
 	
 	@SuppressWarnings("resource")
 	public static void main(String args[]) {
